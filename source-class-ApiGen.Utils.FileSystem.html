@@ -762,7 +762,7 @@
 </span><span id="54" class="l">            <span class="php-keyword2">mkdir</span>(<span class="php-var">$path</span>, <span class="php-num">0755</span>, <span class="php-keyword1">true</span>);
 </span><span id="55" class="l">        }
 </span><span id="56" class="l">
-</span><span id="57" class="l">        <span class="php-keyword1">foreach</span> (Finder::find(<span class="php-quote">'*'</span>)-&gt;from(<span class="php-var">$path</span>)-&gt;childFirst() <span class="php-keyword1">as</span> <span class="php-var">$item</span>) {
+</span><span id="57" class="l">        <span class="php-keyword1">foreach</span> (Finder::find(<span class="php-quote">'*'</span>)-&gt;from(<span class="php-var">$path</span>)-&gt;exclude(<span class="php-quote">'.git'</span>)-&gt;childFirst() <span class="php-keyword1">as</span> <span class="php-var">$item</span>) {
 </span><span id="58" class="l">            <span class="php-comment">/** @var \SplFileInfo $item */</span>
 </span><span id="59" class="l">            <span class="php-keyword1">if</span> (<span class="php-var">$item</span>-&gt;isDir()) {
 </span><span id="60" class="l">                <span class="php-keyword2">rmdir</span>(<span class="php-var">$item</span>);
